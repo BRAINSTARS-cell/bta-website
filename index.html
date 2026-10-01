@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Brain Star Tutor Academy | BTA</title>
+
+  <meta name="description" content="Brain Star Tutor Academy - WAEC and JAMB preparation for students in Port Harcourt. Think it. Learn it. ACE IT.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #f7f9fc;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      background: #071b3a;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .logo span {
+      color: #ffcc33;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 22px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #ffcc33;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(7,27,58,0.9), rgba(7,27,58,0.9)),
+        linear-gradient(135deg, #0b3d91, #071b3a);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #ffcc33;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #e5ebf5;
+    }
+
+    .slogan {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffcc33;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #ffcc33;
+      color: #071b3a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #ffd95c;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #071b3a;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #071b3a;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #687386;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about h3 {
+      color: #0b3d91;
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #586477;
+      margin-bottom: 15px;
+    }
+
+    .info-box {
+      background: #eef4ff;
+      padding: 30px;
+      border-radius: 15px;
+      border-left: 5px solid #0b3d91;
+    }
+
+    .info-box h3 {
+      margin-bottom: 12px;
+    }
+
+    /* SUBJECTS */
+    .subjects {
+      background: #f7f9fc;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(10,30,70,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #071b3a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #687386;
+    }
+
+    /* EXAM PREP */
+    .exam {
+      background: #071b3a;
+      color: white;
+      text-align: center;
+    }
+
+    .exam h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .exam p {
+      max-width: 750px;
+      margin: auto;
+      color: #dbe4f4;
+    }
+
+    .exam-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      max-width: 850px;
+      margin: 40px auto 0;
+    }
+
+    .exam-box {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .exam-box h3 {
+      color: #ffcc33;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    /* TUTOR */
+    .tutor {
+      background: white;
+      text-align: center;
+    }
+
+    .tutor-card {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px 25px;
+      border-radius: 20px;
+      background: #f7f9fc;
+    }
+
+    .tutor-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: #0b3d91;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .tutor-card h3 {
+      font-size: 30px;
+      color: #071b3a;
+    }
+
+    /* WHY US */
+    .why {
+      background: #f7f9fc;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      padding: 30px;
+      background: #f7f9fc;
+      border-radius: 15px;
+    }
+
+    .contact-card h3 {
+      color: #071b3a;
+      margin-bottom: 15px;
+    }
+
+    .contact-item {
+      margin: 15px 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #0b3d91;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #041226;
+      color: #b8c4d6;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .slogan {
+        font-size: 21px;
+      }
+
+      .about-grid,
+      .contact-grid,
+      .exam-boxes {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 31px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        BTA<span>•</span>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#tutor">Tutor</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="slogan">
+        THINK IT. LEARN IT. ACE IT.
+      </div>
+
+      <h1>
+        Brain Star<br>
+        <span>Tutor Academy</span>
+      </h1>
+
+      <p>
+        Quality academic tutoring and examination preparation
+        for WAEC and JAMB students in Port Harcourt.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary"
+           href="https://wa.me/2347048807864"
+           target="_blank">
+          💬 WhatsApp Us
+        </a>
+
+        <a class="btn btn-outline" href="#subjects">
+          Explore Subjects
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About BTA</h2>
+        <p>Helping students learn, prepare and achieve.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div>
+          <h3>Brain Star Tutor Academy</h3>
+
+          <p>
+            BTA is an educational tutoring academy dedicated to
+            helping WAEC and JAMB students build their knowledge,
+            confidence and examination readiness.
+          </p>
+
+          <p>
+            Our goal is simple:
+            help students understand what they learn,
+            practise effectively and approach their examinations
+            with confidence.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>📍 Our Location</h3>
+
+          <p>
+            Choba, near Indomie Gate,
+            Port Harcourt, Nigeria.
+          </p>
+
+          <p>
+            📞 <strong>+234 704 880 7864</strong>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBJECTS -->
+  <section class="subjects" id="subjects">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Subjects</h2>
+        <p>Support for both Art and Science students.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🔬</div>
+          <h3>Science Subjects</h3>
+          <p>
+            Academic tutoring and examination preparation
+            for students studying science-related subjects.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📚</div>
+          <h3>Art Subjects</h3>
+          <p>
+            Learning support for students studying
+            arts and humanities-related subjects.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎯</div>
+          <h3>Exam Preparation</h3>
+          <p>
+            Structured preparation designed around
+            WAEC and JAMB examination needs.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WAEC/JAMB -->
+  <section class="exam">
+    <div class="container">
+
+      <h2>WAEC & JAMB Preparation</h2>
+
+      <p>
+        Prepare for important examinations with focused
+        learning, revision and practice.
+      </p>
+
+      <div class="exam-boxes">
+
+        <div class="exam-box">
+          <h3>WAEC</h3>
+          <p>
+            Build strong subject knowledge and prepare
+            for your WAEC examinations.
+          </p>
+        </div>
+
+        <div class="exam-box">
+          <h3>JAMB</h3>
+          <p>
+            Strengthen your understanding and prepare
+            for your JAMB examination.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTOR -->
+  <section class="tutor" id="tutor">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Meet Your Tutor</h2>
+      </div>
+
+      <div class="tutor-card">
+
+        <div class="tutor-avatar">
+          CE
+        </div>
+
+        <h3>Mr Collins</h3>
+
+        <p>
+          <strong>Dr Egghead</strong>
+        </p>
+
+        <p>
+          Tutor at Brain Star Tutor Academy,
+          helping WAEC and JAMB students with
+          their academic preparation.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BTA -->
+  <section class="why">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Choose BTA?</h2>
+        <p>Focused on helping students learn effectively.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>Understand</h3>
+          <p>
+            Focus on understanding concepts rather
+            than simply memorising information.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📝</div>
+          <h3>Practise</h3>
+          <p>
+            Build confidence through consistent
+            academic preparation and practice.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏆</div>
+          <h3>Achieve</h3>
+          <p>
+            Stay focused on your academic goals
+            and examination preparation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact BTA</h2>
+        <p>Ready to learn? Get in touch with us.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h3>Get in Touch</h3>
+
+          <div class="contact-item">
+            <strong>📞 Phone</strong>
+            +234 704 880 7864
+          </div>
+
+          <div class="contact-item">
+            <strong>💬 WhatsApp</strong>
+
+            <a href="https://wa.me/2347048807864"
+               target="_blank">
+              Chat with BTA on WhatsApp
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>📍 Location</strong>
+            Choba, near Indomie Gate,
+            Port Harcourt, Nigeria.
+          </div>
+
+        </div>
+
+        <div class="contact-card">
+
+          <h3>Start Your Journey</h3>
+
+          <p>
+            Contact BTA to learn more about tutoring
+            and WAEC/JAMB preparation.
+          </p>
+
+          <br>
+
+          <a class="btn btn-primary"
+             href="tel:+2347048807864">
+            📞 Call BTA
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <strong>Brain Star Tutor Academy (BTA)</strong>.
+      All rights reserved.
+    </p>
+
+    <p>
+      Think it. Learn it. ACE IT.
+    </p>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a class="whatsapp"
+     href="https://wa.me/2347048807864"
+     target="_blank"
+     aria-label="Chat with BTA on WhatsApp">
+    💬
+  </a>
+
+</body>
+</html>
